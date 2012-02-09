@@ -2,16 +2,16 @@ SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL';
 
-DROP SCHEMA IF EXISTS `mydb` ;
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci ;
-USE `mydb` ;
+DROP SCHEMA IF EXISTS `mobweb` ;
+CREATE SCHEMA IF NOT EXISTS `mobweb` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci ;
+USE `mobweb` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`players`
+-- Table `mobweb`.`players`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`players` ;
+DROP TABLE IF EXISTS `mobweb`.`players` ;
 
-CREATE  TABLE IF NOT EXISTS `mydb`.`players` (
+CREATE  TABLE IF NOT EXISTS `mobweb`.`players` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `nickname` VARCHAR(45) NULL ,
   `password` VARCHAR(32) NULL ,
@@ -26,11 +26,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`locations`
+-- Table `mobweb`.`locations`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`locations` ;
+DROP TABLE IF EXISTS `mobweb`.`locations` ;
 
-CREATE  TABLE IF NOT EXISTS `mydb`.`locations` (
+CREATE  TABLE IF NOT EXISTS `mobweb`.`locations` (
   `id` INT NOT NULL ,
   `name` VARCHAR(128) NULL ,
   `latitude` DECIMAL(18,15) NULL ,
@@ -43,11 +43,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`checkins`
+-- Table `mobweb`.`checkins`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`checkins` ;
+DROP TABLE IF EXISTS `mobweb`.`checkins` ;
 
-CREATE  TABLE IF NOT EXISTS `mydb`.`checkins` (
+CREATE  TABLE IF NOT EXISTS `mobweb`.`checkins` (
   `id` INT NOT NULL ,
   `playerid` INT NULL ,
   `locationid` INT NULL ,
